@@ -32,7 +32,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>MHA Insurance</title>
+     <link rel = "icon" href = "https://i.ibb.co/hLY9BDb/MHA.png" 
+        type = "image/x-icon">
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -59,7 +61,7 @@
                         <!-- Nested Row within Card Body -->
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Welcome to MHA Insurance</h1>
                                     </div>
                                     <form method="post">
                                         <div class="form-group">
