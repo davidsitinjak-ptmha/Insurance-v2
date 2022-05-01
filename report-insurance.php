@@ -40,7 +40,8 @@
                         <th>Currency</th>
                         <th>Sum Insured</th>
                         <th>Rate</th>
-                        <th>Period</th>
+                        <th>Start Periode</th>
+                        <th>End Periode</th>
                         <th>Amount</th>
                         <th>Comments</th>
                     </tr>
@@ -62,7 +63,8 @@
                             $currency = $insuranceUnit['currency'];
                             $sumInsured = $insuranceUnit['sumInsured'];
                             $rate = $insuranceUnit['rate'];
-                            $periode = $insuranceUnit['periode'];
+                            $startPeriode = $insuranceUnit['startPeriode'];
+                            $endPeriode = $insuranceUnit['endPeriode'];
                             $amount = $insuranceUnit['amount'];
                             $comments = $insuranceUnit['comments'];
                             $idJobSite = $insuranceUnit['idJobSite'];
@@ -80,12 +82,11 @@
                                 <td><?php echo $currency;?></td>
                                 <td><?php echo $sumInsured;?></td>
                                 <td><?php echo $rate;?></td>
-                                <td><?php echo $periode;?></td>
+                                <td><?php echo $startPeriode;?></td>
+                                <td><?php echo $endPeriode;?></td>
                                 <td><?php echo $amount;?></td>
-                                <td><?php echo $comments;?></td>
-                       
+                                <td><?php echo $comments;?></td>                     
                             </tr>
-
                     <?php
                         }
                     ?>

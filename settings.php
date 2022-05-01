@@ -113,7 +113,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <h1 class="h3 mb-0 text-gray-800">JOB SITE</h1>
+                    <h1 class="h3 mb-0 text-gray-800">SETTINGS</h1>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -162,13 +162,7 @@
                                     <span class="icon text-white-50">
                                         <i class="fas fa-plus"></i>
                                     </span>
-                                    <span class="text">New Job Site</span>
-                                </a>
-                                <a href="report-job-site.php" class="btn btn-primary btn-icon-split" >
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-download"></i>
-                                    </span>
-                                    <span class="text">Generate Report</span>
+                                    <span class="text">New User</span>
                                 </a>
                             </div>
                             <div class="table-responsive">
@@ -176,34 +170,34 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Job site</th>
+                                            <th>Email</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $getAllInsuranceUnit = mysqli_query($conn, 'SELECT * FROM JobSite j');
-                                            $i = 1;
-                                            while ($insuranceUnit = mysqli_fetch_array($getAllInsuranceUnit)){
-                                                $jobSiteName = $insuranceUnit['jobSiteName'];
-                                                $idJobSite = $insuranceUnit['idJobSite'];
+                                            $getAllLogin = mysqli_query($conn, 'SELECT * FROM login l');
+                                            $i = 1;     
+                                            while ($insuranceUnit = mysqli_fetch_array($getAllLogin)){
+                                                $email = $insuranceUnit['email'];
+                                                $idUser = $insuranceUnit['idUser'];
                                         ?>
                                                 <tr>
                                                     <td><?=$i++;?></td>
-                                                    <td><?=$jobSiteName;?></td>
+                                                    <td><?=$email;?></td>
 
                                                     <td>
                                                         <!-- <div class="btn-group" role="group" aria-label="Basic example"> -->
-                                                            <!-- <a type="button" class="btn btn-info"  href="detail.php?idInsurance=<?=$idJobSite?>" name= "view">
+                                                            <!-- <a type="button" class="btn btn-info"  href="detail.php?idInsurance=<?=$idUser?>" name= "view">
                                                                 View
                                                             </a> -->
-                                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#view<?=$idJobSite?>" disabled>
+                                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#view<?=$idUser?>" disabled>
                                                                 View
                                                             </button>
-                                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit<?=$idJobSite?>">
+                                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit<?=$idUser?>">
                                                                 Edit
                                                             </button>
-                                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#delete<?=$idJobSite?>">
+                                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#delete<?=$idUser?>">
                                                                 Delete
                                                             </button>
                                                         <!-- </div> -->
@@ -212,14 +206,14 @@
                                                 
                                                 
                                                 <!-- Edit    Modal -->
-                                                <div class="modal fade" id="edit<?=$idJobSite?>">
+                                                <div class="modal fade" id="edit<?=$idUser?>">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                         
                                                             <!-- Modal Header -->
                                                             <div class="modal-header">
                                                                 <div class="container">
-                                                                    <h4><span class="label label-default">Update Job Site</span></h4>
+                                                                    <h4><span class="label label-default">Update User</span></h4>
                                                                 </div>
                                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                             </div>
@@ -229,14 +223,14 @@
                                                                 <div class="modal-body">
                                                                    
                                                                     <div class="form-floating mb-3">
-                                                                        <input type="text" name="jobSiteName" placeholder="Job Site" class="form-control" id="floatingInput" value = "<?=$jobSiteName;?>" required>
-                                                                        <label for="floatingInput">Job Site</label>
+                                                                        <input type="text" name="email" placeholder="Email " class="form-control" id="floatingInput" value = "<?=$jobSiteName;?>" required>
+                                                                        <label for="floatingInput">Email</label>
                                                                     </div>
                                                                    
-                                                                    <input type="hidden" name="idJobSite" value="<?=$idJobSite?>" class="form-control">
+                                                                    <input type="hidden" name="idUser" value="<?=$idUser?>" class="form-control">
                                                                     <div class="modal-footer">
                                                                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                                                        <button type="submit" name="updateJobSite" class="btn btn-warning">Submit</button>
+                                                                        <button type="submit" name="updateUser" class="btn btn-warning">Submit</button>
                                                                     </div>
                                                                 </div>
                                                             </form>
@@ -246,13 +240,13 @@
                                                 </div>
 
                                                 <!-- Delete Modal -->
-                                                <div class="modal fade" id="delete<?=$idJobSite?>">
+                                                <div class="modal fade" id="delete<?=$idUser?>">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                         
                                                             <!-- Modal Header -->
                                                             <div class="modal-header">
-                                                            <h4 class="modal-title">Delete Job Site</h4>
+                                                            <h4 class="modal-title">Delete User</h4>
                                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                             </div>
                                                             
@@ -260,13 +254,13 @@
                                                             <form method="post">
                                                                 <div class="modal-body">
                                                                     <div class="form-floating mb-3">
-                                                                        <span class="label label-default">Are you sure to delete Job Site : <?=$jobSiteName?>?</span>
+                                                                        <span class="label label-default">Are you sure to delete User : <?=$email?>?</span>
                                                                     </div>                                                                
                                                                 </div>
-                                                                <input type="hidden" name="idJobSite" value="<?=$idJobSite?>" class="form-control">
+                                                                <input type="hidden" name="idUser" value="<?=$idUser?>" class="form-control">
                                                                 <div class="modal-footer">
                                                                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                                                    <button type="submit" name="DeleteJobSite" class="btn btn-danger">Delete</button>
+                                                                    <button type="submit" name="DeleteUser" class="btn btn-danger">Delete</button>
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -340,19 +334,29 @@
             
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Insert New Job Site</h4>
+                    <h4 class="modal-title">Insert New User</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <!-- Modal body -->
                 <form method="post">
                     <div class="modal-body">
                         <div class="form-floating mb-3">
-                            <input type="text" name="jobSiteName" placeholder="Job Site" class="form-control" id="floatingInput" value = "<?=$jobSiteName;?>" required>
-                            <label for="floatingInput">Job Site</label>
+                            <input type="text" name="email" placeholder="Email" class="form-control" id="floatingInput" equired>
+                            <label for="floatingInput">Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="password" placeholder="Password" class="form-control" id="floatingInput" required>
+                            <label for="floatingInput">Password</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="retypePassword" placeholder="Retype Password" class="form-control" id="floatingInput"  required>
+                            <label for="floatingInput">Retype Password</label>
+                            <span id='message'></span>
+
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <button type="submit" name="addNewJobSite" class="btn btn-primary">Submit</button>
+                            <button type="submit" name="addNewUser" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -391,6 +395,16 @@
                 "bDestroy": true,
                 "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
 		       } );
+
+
+               $("input[name='password']", "input[name='retypePassword']").on('keyup', function () {
+                if ($("input[name='password']").val() == $("input[name='retypePassword']").val()) {
+                    $('#message').html('Matching').css('color', 'green');
+                } else 
+                    $('#message').html('Not Matching').css('color', 'red');
+                });
+
+
 		 } );
     </script>
     
