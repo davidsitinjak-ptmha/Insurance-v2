@@ -6,7 +6,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
         //compare with database
-        $checkDatabase = mysqli_query($conn, "SELECT * FROM login WHERE email= '$email' and password= '$password'");
+        $checkDatabase = mysqli_query($conn, "SELECT * FROM login WHERE email= '$email' and pwd= '$password'");
         
         //count row if email and password allrady exist
         $count = mysqli_num_rows($checkDatabase);
