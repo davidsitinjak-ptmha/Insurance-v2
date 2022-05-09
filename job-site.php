@@ -347,7 +347,7 @@
                 <form method="post">
                     <div class="modal-body">
                         <div class="form-floating mb-3">
-                            <input type="text" name="jobSiteName" placeholder="Job Site" class="form-control" id="floatingInput" value = "<?=$jobSiteName;?>" required>
+                            <input type="text" name="jobSiteName" placeholder="Job Site" class="form-control" id="floatingInput" required>
                             <label for="floatingInput">Job Site</label>
                         </div>
                         <div class="modal-footer">
